@@ -1,4 +1,4 @@
-- hosts: tomcatservers
+- hosts: tomcatserver
   become: true
   tasks:
     - name: Install Java
@@ -21,7 +21,7 @@
     - name: Unpacking the archive
       unarchive:
         src: /usr/local/apache-tomcat-9.0.71.tar.gz
-        dest: /usr/local
+        dest: /usr/local/
         remote_src: yes
     - name: Change file ownership, group and permissions
       file:
